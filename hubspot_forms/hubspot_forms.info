@@ -1,0 +1,12 @@
+name = Hubspot Forms Integration
+description = Display Hubspot forms using Hubspot API. Includes a Hubspot select list field that can be placed on content types to choose any form from the HubSpot account identified by the configured API key.
+core = 7.x
+package = Hubspot
+
+dependencies[] = block
+dependencies[] = field
+
+version = "7.x-1.0"
+core = "7.x"
+project = "hubspot_forms"
+datestamp = "1504219536"

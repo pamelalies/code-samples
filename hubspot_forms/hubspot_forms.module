@@ -1,0 +1,242 @@
+<?php
+/**
+ * @file
+ * Provide hubspot forms field, implemented as a select list with the list of forms pulled from the HubSpot account identified by the configured API key.
+ */
+
+/**
+ * Implementation of hook_init().
+ */
+function hubspot_forms_init() {
+	//drupal_add_js(drupal_get_path('module', 'hubspot_forms') . '/js/hubspot_forms.js'); // only needed for CKEditor plug-in, not currently active
+}
+
+ /**
+ * Implements hook_menu().
+ */
+function hubspot_forms_menu() {
+  $items = array();
+
+  $items['admin/config/services/hubspot-forms'] = array(
+    'title' => 'HubSpot Forms',
+    'description' => 'Hubspot Forms settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('hubspot_forms_settings'),
+    'access arguments' => array('administer hubspot forms'),
+    'file' => 'hubspot_forms.admin.inc',
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function hubspot_forms_permission() {
+  return array(
+    'administer hubspot forms' => array(
+      'title' => t('Administer hubspot forms'),
+      'description' => t('Perform administration tasks for hubspot forms.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_info().
+ */
+function hubspot_forms_field_info() {
+  return array(
+    'hubspot_forms' => array(
+      'label' => t('Hubspot Form'),
+      'description' => t('Display a Hubspot form.'),
+      'default_widget' => 'hubspot_forms_select',
+      'default_formatter' => 'hubspot_forms_default',
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_is_empty().
+ */
+function hubspot_forms_field_is_empty($item, $field) {
+	return empty($item['hubspot_forms']);
+}
+
+/**
+ * Implements hook_field_widget_info().
+ */
+function hubspot_forms_field_widget_info() {
+  return array(
+    'hubspot_forms_select' => array(  
+      'label' => t('Hubspot Form Select'),
+      'field types' => array('hubspot_forms'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_widget_form().
+ */
+function hubspot_forms_field_widget_form(&$form, &$form_state, $field, $instance, $langcode, $items, $delta, $element) {
+    if($instance['widget']['type'] == 'hubspot_forms_select') {
+        $element['hubspot_forms'] = array(
+            '#type' => 'select',
+            '#title' => t('Hubspot Form'),
+            '#options' => getFormIds(),
+            '#default_value' => isset($items[$delta]['hubspot_forms']) ? $items[$delta]['hubspot_forms'] : '',
+        );
+    }    
+    return $element;
+}
+
+/** Can be used if additional validation is needed
+ * Implements hook_field_widget_error().
+ *
+function hubspot_forms_field_widget_error($element, $error, $form, &$form_state) {
+  switch ($error['error']) {
+    case 'hubspot_forms_invalid':
+      form_error($element, $error['message']);
+    break;
+  }
+}
+*/
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function hubspot_forms_field_formatter_info() {
+  return array(
+    'hubspot_forms_default' => array(
+      'label' => t('Hubspot Form Default'),
+      'field types' => array('hubspot_forms')
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function hubspot_forms_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $element = array();
+
+  switch ($display['type']) {
+    // This formatter simply outputs the form with default custom template.
+    case 'hubspot_forms_default':
+	  foreach ($items as $delta => $item) {
+		$data = explode('::', $item['hubspot_forms']);
+	    $element[$delta] = array(
+	      '#markup' => theme('hubspot_form', array('portal_id' => $data[0], 'form_id' => $data[1], 'target' => drupal_html_id('hubspot-form-wrapper'))),
+	    );
+	  }
+    break;
+  }
+
+  return $element;
+}
+
+
+/** Can be used if additional validation is desired
+ * Implements hook_field_validate().
+ *
+function hubspot_forms_field_validate($entity_type, $entity, $field, $instance, $langcode, $items, &$errors) {
+  foreach ($items as $delta => $item) {
+    if (!empty($item['hubspot_forms'])) {
+	  // here we can do one more validation that the form id is valid - more validation could be added if needed
+	  if(!array_key_exists($item['hubspot_forms'], getFormIds()))
+	  {
+		$errors[$field['hubspot_forms']][$langcode][$delta][] = array(
+		  'error' => 'hubspot_forms_invalid',
+		  'message' => t('It appears the form selected is invalid.'),
+		);
+	  }
+    }
+  }
+}
+*/
+
+/**
+ * Implements hook_theme().
+ */
+function hubspot_forms_theme() {
+  return array(
+    'hubspot_form' => array(
+	  'template' => 'hubspot-form',
+      'variables' => array('portal_id' => NULL, 'form_id' => NULL, 'target' => NULL),
+      'path' => drupal_get_path('module', 'hubspot_forms') . '/templates'
+    ),
+  );
+}
+
+
+/**
+ * Get form ids.
+ */
+function getFormIds() {
+  $cid = 'hubspot_forms';
+  $forms = NULL;
+  if ($cache = cache_get($cid)) {
+    $forms = $cache->data;
+  }
+  else { */
+    $forms = fetchHubspotForms();
+    cache_set($cid, $forms);
+  }
+  
+  // Sort the array of forms returned by the form name - this is new functionality in the D7 version
+  if (!empty($forms)) {
+   usort($forms, function($a, $b)
+    {
+      return strcmp($a->name, $b->name);
+    });
+  }
+  
+  $form_ids = [
+    '' => t('- Choose a Hubspot form -'),
+  ];
+  if (!empty($forms)) {
+    foreach ($forms as $item) {
+      $form_ids[$item->portalId . '::' . $item->guid] = $item->name;
+    }
+  }
+  
+  //drupal_set_message('<pre>$form_ids:'. print_r($form_ids, TRUE) .'</pre>');
+  //drupal_set_message('<pre>$forms:'. print_r($forms, TRUE) .'</pre>'); 
+  return $form_ids;
+}
+
+/**
+ * Make an API call to HubSpot Forms API
+ * and get a list of all available forms.
+ */
+function fetchHubspotForms() {
+  $api_key = variable_get('hubspot_forms_hubspot_api_key', '');
+  if (!empty($api_key)) {
+    // Get all forms from the portal with the given API key (http://developers.hubspot.com/docs/methods/forms/v2/get_forms)
+    $uri = 'https://api.hubapi.com/forms/v2/forms?hapikey=' . $api_key;
+    $request = drupal_http_request($uri, ['headers' => ['Accept' => 'application/json']]);
+    //drupal_set_message('<pre>$request is:'. print_r($request, TRUE) .'</pre>'); 
+    if ($request->code == 200) {
+      $response = json_decode($request->data);
+      if (empty($response)) {
+        return [];
+      }
+      else {
+        return $response;
+      }
+    }
+    else {
+      return [];
+    }
+  } else {
+    return array('error' => t('This site is not connected to a HubSpot Account. Make sure you provided the correct Hubspot API Key on the configuration page.'));
+  }
+}
+
+/**
+ * Check Hubspot connection.
+ */
+function isConnected() {
+  $forms = $this->fetchHubspotForms();
+  return count($forms);
+}

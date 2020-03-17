@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Hubspot Forms module.
+ * @author pamelalies
+ */
+
+
+/**
+ * Implements hook_field_schema().
+ */
+ /*
+function hubspot_forms_field_schema($field) {
+  return array(
+    'columns' => array(
+      'option' => array(
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => FALSE,
+      ),
+    ),
+  );
+}
+*/
+
+
+/**
+ * Implements hook_field_schema().
+ */
+function hubspot_forms_field_schema($field) {
+  if ($field['type'] == 'hubspot_forms') {
+      $columns = array(
+        'hubspot_forms' => array(
+          'type' => 'varchar',
+          'length' => 255,
+          'not null' => true,
+        ),
+      );
+  }
+
+  return array('columns' => $columns);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function hubspot_forms_uninstall() {
+ variable_del('hubspot_forms_hubspot_api_key');
+}
