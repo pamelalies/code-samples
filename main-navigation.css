@@ -1,0 +1,1634 @@
+/***************
+ * Provides styling for header and main site navigation
+ * for all device widths.
+ * 
+ ****************/
+
+/***************
+ * Common styles - mobile and desktop
+ ****************/
+
+/* Main Navigation - First Level */
+nav.navigation .item-description {
+    display: none;
+}
+
+nav.navigation .primary {
+    margin-bottom: 0;
+    text-transform: none;
+}
+
+nav.navigation a {
+    text-decoration: none;
+}
+
+nav.navigation .primary>li>a {
+    padding: 11px 15px 21px 15px;
+}
+
+/* Main Navigation - Second Level */
+nav.navigation .primary .dropdown-menu {
+    border-radius: 0;
+    min-width: 300px;
+}
+
+/* User Navigation - Second Level */
+nav.navigation .secondary .dropdown-menu {
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#list-solutions-main-menu #list-it-infrastructure-monitoring {
+    border-radius: 0;
+    min-width: 380px !important;
+}
+
+#list-products-main-menu .dropdown-menu {
+    border-radius: 0;
+    min-width: 270px !important;
+}
+
+nav.navigation .primary .dropdown-menu>li>a {
+    line-height: 1.2;
+    white-space: normal;
+}
+
+nav.navigation .primary .dropdown-menu>li a:hover nav.navigation .primary .dropdown-menu>li.active a:hover {
+    color: #0072c6;
+}
+
+nav.navigation .primary .dropdown-menu>li.last {
+    border-bottom: none;
+}
+
+nav.navigation .primary .dropdown-menu>li.last>a,
+nav.navigation .primary .dropdown-menu>li.active.last>a {
+    color: #0072c6;
+    font-size: 15px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+nav.navigation .secondary .dropdown-menu>li.last>a {
+    color: #0072c6;
+}
+
+nav.navigation .secondary .dropdown-menu>li.active.last>a,
+nav.navigation .secondary .dropdown-menu>li.active.last>a:hover {
+    color: #fff;
+}
+
+nav.navigation .primary .dropdown-menu>li.active.last>a:hover {
+    color: #23527c;
+}
+
+nav.navigation .primary .dropdown-menu>li.last>a:after,
+nav.navigation .secondary .dropdown-menu>li.last>a:after {
+    font-size: 14px;
+    content: "\e258";
+    font-family: 'Glyphicons Halflings';
+    display: inline-block;
+    -ms-transform: translate(10px, 2px);
+    -webkit-transform: translate(10px, 2px);
+    -moz-transform: translate(10px, 2px);
+    transform: translate(10px, 2px);
+}
+
+/* Products & Solutions, Solutions, Products, Services */
+#list-products-et-solutions .dropdown-submenu li.section-title,
+#list-solutions-main-menu .dropdown-submenu li.section-title,
+#list-services-main-menu .dropdown-submenu li.section-title {
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+#list-products-main-menu.dropdown-menu li.section-title,
+#list-solutions-main-menu.dropdown-menu li.section-title {
+    text-transform: uppercase;
+    margin-top: 18px !important;
+    border-bottom: none !important;
+    display: block !important;
+    float: none !important;
+}
+
+nav.navigation .menu-icon {
+    display: none;
+}
+
+nav.navigation .primary li,
+nav.navigation .primary a {
+    -webkit-transition: all ease-out .2s;
+    -moz-transition: all ease-out .2s;
+    transition: all ease-out .2s;
+}
+
+/* Default transition effects */
+
+nav.navigation .primary>li#services1>.dropdown-menu,
+nav.navigation .primary>li#resources>.dropdown-menu,
+nav.navigation .primary>li#support>.dropdown-menu,
+nav.navigation .primary>li#about>.dropdown-menu {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    -webkit-transition: all ease-out .2s;
+    -moz-transition: all ease-out .2s;
+    transition: all ease-out .2s;
+}
+
+
+nav.navigation .primary>li#resources.open>.dropdown-menu,
+nav.navigation .primary>li#support.open>.dropdown-menu,
+nav.navigation .primary>li#about.open>.dropdown-menu {
+    opacity: 1;
+    height: auto;
+    overflow: initial;
+}
+
+nav.navigation #products-et-solutions .dropdown-menu,
+nav.navigation #solutions-main-menu .dropdown-menu,
+nav.navigation #products-main-menu .dropdown-menu,
+nav.navigation #services-main-menu .dropdown-menu {
+    opacity: 0;
+}
+
+nav.navigation .primary>li>a:hover {
+    background-color: inherit;
+}
+
+/***************
+ * Mobile and laptop only styles
+ ****************/
+
+@media (max-width: 1279px) {
+
+  /*************
+   * Enables mobile navigation on larger devices as well
+   *************/
+
+    .navbar-header {
+        float: none;
+    }
+
+    .navbar-left,
+    .navbar-right {
+        float: none !important;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar-collapse.collapse.scrollable-menu {
+        overflow: auto !important;
+    }
+
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+
+    .navbar-nav {
+        float: none !important;
+        margin-top: 7.5px;
+    }
+
+    .navbar-nav>li {
+        float: none;
+    }
+
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .collapse.in {
+        display: block !important;
+    }
+
+  /*************
+   * Don't show the menu banner ads on mobile
+   *************/
+    .products-menu-banner-ad,
+    .solutions-menu-banner-ad,
+    .products-menu-banner-ad-spanish,
+    .solutions-menu-banner-ad-spanish {
+        display: none !important;
+    }
+
+  /*************
+   * General settings
+   *************/
+
+    .navbar-collapse::-webkit-scrollbar {
+        width: 0 !important
+    }
+
+    #navbar-center .container-fluid {
+        padding: 0;
+    }
+
+    .navbar-header .logo {
+        background: url(../logo-mobile.png) no-repeat;
+        width: 30px;
+        height: 30px;
+        margin: 7px 15px 0px;
+        position: absolute;
+        z-index: 99;
+    }
+
+    .navbar {
+        min-height: 40px;
+    }
+
+    .navbar-inverse {
+        background-color: rgba(4, 97, 155, 1);
+        background: -moz-linear-gradient(left, rgba(4, 97, 155, 1) 0%, rgba(4, 97, 155, 0.96) 59%, rgba(4, 97, 155, 0.93) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(4, 97, 155, 1)), color-stop(59%, rgba(4, 97, 155, 0.96)), color-stop(100%, rgba(4, 97, 155, 0.93)));
+        background: -webkit-linear-gradient(left, rgba(4, 97, 155, 1) 0%, rgba(4, 97, 155, 0.96) 59%, rgba(4, 97, 155, 0.93) 100%);
+        background: -o-linear-gradient(left, rgba(4, 97, 155, 1) 0%, rgba(4, 97, 155, 0.96) 59%, rgba(4, 97, 155, 0.93) 100%);
+        background: -ms-linear-gradient(left, rgba(4, 97, 155, 1) 0%, rgba(4, 97, 155, 0.96) 59%, rgba(4, 97, 155, 0.93) 100%);
+        background: linear-gradient(to right, rgba(4, 97, 155, 1) 0%, rgba(4, 97, 155, 0.96) 59%, rgba(4, 97, 155, 0.93) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#04619b', endColorstr='#04619b', GradientType=1);
+    }
+
+    .navbar-inverse .navbar-toggle,
+    .navbar-inverse .navbar-toggle:hover,
+    .navbar-inverse .navbar-toggle:focus {
+        margin-top: 0;
+        margin-bottom: 0;
+
+        border: none;
+        border-radius: 0;
+        padding: 13px 10px;
+    }
+
+    .navbar-header .logo img {
+        display: none;
+    }
+
+    .navbar-header .mobile-header {
+        position: absolute;
+        width: 100%;
+        height: 40px;
+        padding-left: 60px;
+        padding-right: 40px;
+    }
+
+    .navbar-header .region.region-mobile-header {
+        float: right;
+    }
+
+    .navbar-header .mobile-header .mobile-trials {
+        float: left;
+        margin-top: 10px;
+        padding: 0 10px;
+    }
+
+    .navbar-header .contact-mobile {
+        float: right;
+        margin-top: 7px;
+        margin-right: 15px;
+        padding-left: 10px;
+    }
+
+    .navbar-header .contact-mobile li {
+        list-style: none;
+        float: left;
+        margin-left: 10px;
+    }
+
+    .navbar-header .contact-mobile li:first-child {
+        margin-left: 0;
+    }
+
+    .navbar-header .contact-mobile li .text {
+        display: none;
+    }
+
+    nav.navigation .region-user-navigation,
+    li#free-trials {
+        display: none;
+    }
+
+    nav.navigation .secondary {
+        margin-top: -1px;
+        width: 100%;
+        margin-bottom: 0;
+        display: block !important;
+        border-bottom: solid 1px #ddd;
+        z-index: 99;
+        padding-bottom: 40px;
+    }
+
+    nav.navigation .secondary.hidden-nav,
+    nav.navigation .secondary .free-trials {
+        display: none !important;
+    }
+
+    .navbar-inverse ul.secondary>li>a,
+    .navbar-inverse .navbar-nav>.active>a {
+        color: #333;
+    }
+
+    nav.navigation .secondary li a {
+        font-size: 14px;
+        color: #777;
+        padding-left: 40px;
+    }
+
+    nav.navigation .secondary li a:hover,
+    nav.navigation .secondary li a:focus {
+        color: #2f535e;
+    }
+
+    nav.navigation .secondary,
+    nav.navigation .secondary li,
+    nav.navigation .secondary li a {
+        background-color: #F6F6F6;
+    }
+
+    nav.navigation #free-trials {
+        width: 110px;
+    }
+
+
+    /* Main Navigation - First Level  */
+    nav.navigation,
+    nav.navigation .primary {
+        float: none;
+    }
+
+    nav.navigation .primary {
+        position: relative;
+        /* padding-bottom: 140px; */
+    }
+
+
+    nav.navigation .primary li {
+        float: none;
+        width: 100%;
+        border-bottom: solid 1px #ddd;
+    }
+
+    /* Main background color */
+    nav.navigation .primary>li a,
+    nav.navigation .primary>li.active>a,
+    nav.navigation .primary>li.active>a:hover,
+    nav.navigation .primary>li.active>a:focus {
+        background-color: #f5f6f6;
+    }
+
+    /* Bootstrap override */
+    nav.navigation .primary .dropdown-menu>.active>a,
+    nav.navigation .primary .dropdown-menu>.active>a:hover,
+    nav.navigation .primary .dropdown-menu>.active>a:focus {
+        background-color: inherit;
+    }
+
+    nav.navigation .primary li a {
+        border-radius: 0px;
+        line-height: 2.2;
+        font-size: 15px;
+        color: #2f353e;
+        padding: 8px 25px 8px 20px;
+    }
+
+    nav.navigation .primary>li .caret {
+        float: right;
+        border: none;
+        -webkit-transform: translate(0, -2px);
+        -moz-transform: translate(0, -2px);
+        -ms-transform: translate(0, -2px);
+        transform: translate(0, -2px);
+    }
+
+    nav.navigation .primary>li .caret:after {
+        content: "+";
+        font-size: 18px;
+    }
+
+    nav.navigation .primary>li.open>a>.caret:after,
+    nav.navigation .primary li.selected-item-container>a>.caret:after,
+    nav.navigation .primary .dropdown-level-2 li.selected-item-container a .caret:after {
+        content: "x";
+    }
+
+    /* Active items */
+    nav.navigation .primary li.open>a,
+    nav.navigation .primary li.open>a.active,
+    nav.navigation .primary li>a.selected-item,
+    nav.navigation .primary .dropdown-menu>.selected-item-container>a,
+    nav.navigation .primary .dropdown-menu>.selected-item-container>a:hover,
+    nav.navigation .primary .dropdown-menu>.selected-item-container>a:focus {
+        background-color: #d3d5d6;
+        -webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.175);
+        -moz-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.175);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.175);
+        color: #2f353e;
+    }
+
+    nav.navigation .primary .dropdown-menu>li a:hover {
+        color: #2f353e;
+    }
+
+
+    nav.navigation .primary>li+li {
+        margin-left: 0;
+    }
+
+
+    /* Main Navigation - Second Level */
+    nav.navigation .primary .dropdown-menu {
+        position: relative;
+        box-shadow: none;
+        border: none;
+        background-color: #F5F6F6;
+        border-bottom: solid 1px #ddd;
+        margin-top: 0;
+        margin-bottom: 0;
+        border-top: solid 1px #ddd;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    nav.navigation .primary .dropdown-menu,
+    nav.navigation .primary .dropdown-menu li {
+        width: 100%;
+    }
+
+    nav.navigation .primary>li,
+    nav.navigation .primary .dropdown-menu li {
+        background-color: #F5F6F6;
+    }
+
+    /* Products and Solutions, Services mobile styles */
+    #list-products-et-solutions li.section-title,
+    #list-solutions-main-menu li.section-title,
+    #list-products-main-menu li.section-title {
+        display: none;
+    }
+
+    #products-et-solutions .dropdown-level-3,
+    #solutions-main-menu .dropdown-level-3,
+    #products-main-menu .dropdown-level-3,
+    #services-main-menu .dropdown-level-3 {
+        border-top: none;
+        border-bottom: none;
+    }
+
+    #products-et-solutions .dropdown-level-2 a,
+    #solutions-main-menu .dropdown-level-2 a,
+    #products-main-menu .dropdown-level-2 a,
+    #services-main-menu .dropdown-level-2 a {
+        display: block;
+    }
+
+    #products-et-solutions .dropdown-level-3>li,
+    #solutions-main-menu .dropdown-level-3>li,
+    #products-main-menu .dropdown-level-3>li,
+    #services-main-menu .dropdown-level-3>li {
+        padding: 10px 0 10px 20px;
+    }
+
+    #products-et-solutions .dropdown-level-3>li.subsolution-learn-more,
+    #solutions-main-menu .dropdown-level-3>li.subsolution-learn-more,
+    #products-main-menu .dropdown-level-3>li.subsolution-learn-more {
+        padding: 0px 0 10px 0;
+        font-style: italic;
+    }
+
+    #list-products-et-solutions .dropdown-level-3 li.section-title,
+    #list-solutions-main-menu .dropdown-level-3 li.section-title,
+    #list-products-main-menu li.section-title,
+    #list-services-main-menu .dropdown-level-3 li.section-title {
+        display: block;
+        color: #888;
+        font-size: 12px;
+    }
+
+    #list-products-et-solutions li.section-title.mobile-products,
+    #list-products-et-solutions li.section-title.mobile-products a,
+    #list-solutions-main-menu li.section-title.mobile-products,
+    #list-solutions-main-menu li.section-title.mobile-products a,
+    #list-products-main-menu li.section-title.mobile-products,
+    #list-products-main-menu li.section-title.mobile-products a {
+        display: block;
+        font-size: 12px;
+        color: #888;
+        background-color: #e9eaec;
+    }
+
+    .i18n-en #list-products-et-solutions>li.last a,
+    .i18n-es #list-products-et-solutions>li.last a,
+    .i18n-en #list-solutions-main-menu>li.last a,
+    .i18n-en #list-solutions-main-menu>li.last a,
+    .i18n-en #list-products-main-menu>li.last a,
+    .i18n-en #list-products-main-menu>li.last a,
+    .i18n-es #list-services-main-menu>li.last a,
+    .i18n-es #list-services-main-menu>li.last a {
+        color: #2f353e;
+    }
+
+    .i18n-en #list-products-et-solutions>li.last a:after,
+    .i18n-es #list-products-et-solutions>li.last a:after,
+    .i18n-en #list-solutions-main-menu>li.last a:after,
+    .i18n-es #list-solutions-main-menu>li.last a:after,
+    .i18n-en #list-products-main-menu>li.last a:after,
+    .i18n-es #list-products-main-menu>li.last a:after,
+    .i18n-en #list-services-main-menu>li.last a:after,
+    .i18n-es #list-services-main-menu>li.last a:after {
+        display: none;
+    }
+
+    #products-et-solutions .dropdown-level-3>li>a,
+    #solutions-main-menu .dropdown-level-3>li>a,
+    #services-main-menu .dropdown-level-3>li>a {
+        color: #666;
+        line-height: 1;
+        padding-bottom: 5px;
+        font-size: 14px;
+    }
+
+    #products-et-solutions .dropdown-level-3>li .item-description,
+    #solutions-main-menu .dropdown-level-3>li .item-description,
+    #products-main-menu .dropdown-level-3>li .item-description,
+    #services-main-menu .dropdown-level-3>li .item-description {
+        color: #999;
+        font-size: 14px;
+        display: block;
+        padding-left: 20px;
+        padding-right: 25px;
+    }
+
+    .i18n-en #products-et-solutions .dropdown-level-3>li.last,
+    .i18n-es #products-et-solutions .dropdown-level-3>li.last,
+    .i18n-en #solutions-main-menu .dropdown-level-3>li.last,
+    .i18n-es #solutions-main-menu .dropdown-level-3>li.last,
+    .i18n-en #products-main-menu .dropdown-level-3>li.last,
+    .i18n-es #products-main-menu .dropdown-level-3>li.last,
+    .i18n-en #services-main-menu .dropdown-level-3>li.last,
+    .i18n-es #services-main-menu .dropdown-level-3>li.last {
+        display: none;
+    }
+
+    .i18n-en #products-et-solutions .dropdown-level-3.last-list>li.last,
+    .i18n-es #products-et-solutions .dropdown-level-3.last-list>li.last,
+    .i18n-en #solutions-main-menu .dropdown-level-3.last-list>li.last,
+    .i18n-es #solutions-main-menu .dropdown-level-3.last-list>li.last,
+    .i18n-en #products-main-menu .dropdown-level-3.last-list>li.last,
+    .i18n-es #products-main-menu .dropdown-level-3.last-list>li.last,
+    .i18n-en #services-main-menu .dropdown-level-3.last-list>li.last,
+    .i18n-es #services-main-menu .dropdown-level-3.last-list>li.last {
+        display: block;
+    }
+
+    #solutions-main-menu.spanish #list-solutions-main-menu {
+        height: 510px !important;
+    }
+}
+
+/***************
+ * Desktop only styles
+ ****************/
+
+@media (min-width: 1280px) {
+    .navbar-inverse {
+        border-bottom: none !important;
+    }
+
+    .navbar-inverse {
+        background: rgba(40, 95, 172, .93);
+        background: -moz-linear-gradient(left, rgba(40, 95, 172, 1) 0%, rgba(0, 126, 204, 0.96) 59%, rgba(40, 95, 172, 0.93) 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(40, 95, 172, 1)), color-stop(59%, rgba(0, 126, 204, 0.96)), color-stop(100%, rgba(40, 95, 172, 0.93)));
+        background: -webkit-linear-gradient(left, rgba(40, 95, 172, 1) 0%, rgba(0, 126, 204, 0.96) 59%, rgba(40, 95, 172, 0.93) 100%);
+        background: -o-linear-gradient(left, rgba(40, 95, 172, 1) 0%, rgba(0, 126, 204, 0.96) 59%, rgba(40, 95, 172, 0.93) 100%);
+        background: -ms-linear-gradient(left, rgba(40, 95, 172, 1) 0%, rgba(0, 126, 204, 0.96) 59%, rgba(40, 95, 172, 0.93) 100%);
+        background: linear-gradient(to right, rgba(40, 95, 172, 1) 0%, rgba(0, 126, 204, 0.96) 59%, rgba(40, 95, 172, 0.93) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#285fac', endColorstr='#285fac', GradientType=1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .front .navbar-inverse {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .mobile-header {
+        display: none;
+    }
+
+    nav.navigation .secondary {
+        margin-top: 15px !important;
+        margin-right: 10px;
+    }
+
+    /* Main Navigation - First Level */
+    .navbar-header .logo {
+        margin: 12px 0 0 15px;
+    }
+
+    .region-user-navigation {
+        position: relative;
+        top: 15px;
+    }
+
+    nav.navigation .caret {
+        display: none;
+    }
+
+    nav.navigation .secondary #support,
+    nav.navigation .secondary #soporte {
+        position: relative;
+        left: -3px !important;
+    }
+
+    nav.navigation .secondary #support .caret,
+    nav.navigation .secondary #soporte .caret {
+        display: inline-block !important;
+        border-left: none !important;
+        border-right: none !important;
+    }
+
+    nav.navigation .secondary #support .caret:after,
+    nav.navigation .secondary #soporte .caret:after {
+        content: "\e259";
+        font-family: 'Glyphicons Halflings';
+        width: 10px;
+        font-size: 10px;
+        position: relative;
+        top: -17px;
+        left: -2px;
+        -ms-transform: translate(10px, 2px);
+        -webkit-transform: translate(10px, 2px);
+        -moz-transform: translate(10px, 2px);
+        transform: translate(10px, 2px);
+    }
+
+    nav.navigation .secondary #free-trials {
+        margin-left: 4px;
+    }
+
+    nav.navigation .secondary #user-account {
+        left: 20px;
+    }
+
+    nav.navigation .secondary #log-out {
+        left: 2px;
+    }
+
+    nav.navigation .primary>li.active>a {
+        background-color: inherit;
+        color: inherit;
+    }
+
+    nav.navigation .primary>li>a,
+    nav.navigation .primary>li>span {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+
+    nav.navigation .primary>li>a:hover,
+    nav.navigation .primary>li>a[aria-expanded="true"] {
+        font-size: 13px !important;
+        font-weight: 900;
+    }
+
+    /* Main Navigation - Second Level */
+    nav.navigation .primary .dropdown-submenu {
+        left: 100%;
+        top: 0;
+    }
+
+    nav.navigation .primary .dropdown-level-3 {
+        margin-top: -1px;
+    }
+
+    nav.navigation .primary .dropdown-menu {
+        border: solid 1px #d6d6d6;
+        border-radius: 0;
+        -webkit-box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.175);
+        -moz-box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.175);
+        box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.175);
+        margin-top: 0px;
+    }
+
+    nav.navigation .primary .dropdown-menu>li {
+        border-bottom: solid 1px #d6d6d6;
+    }
+
+    nav.navigation .primary .dropdown-menu>li>a {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+
+    nav.navigation .primary .dropdown-menu>li>a,
+    nav.navigation .primary .dropdown-menu>li.active>a {
+        color: #555;
+        background-color: #FFF;
+    }
+
+    /* Main Navigation - Products & Solutions, Solutions, Products, Services */
+    #list-products-et-solutions,
+    #list-services-main-menu {
+        background-color: #747b87;
+        border: none;
+        border-left: 1px solid #d6d6d6;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    #list-solutions-main-menu,
+    #list-products-main-menu {
+        background-color: #f1f1f1;
+        border: none;
+        border-left: 1px solid #d6d6d6;
+        padding-top: 0;
+        padding-bottom: 0;
+        color: #555;
+        width: 990px;
+        height: 550px;
+    }
+
+    #list-solutions-main-menu {
+        height: 410px;
+    }
+
+    #list-solutions-main-menu {
+        padding-top: 13px !important;
+    }
+
+    #list-solutions-main-menu {
+        left: -495px;
+    }
+
+    #list-products-main-menu {
+        left: -369px;
+    }
+
+    #list-products-et-solutions ul,
+    #list-services-main-menu ul {
+        background-color: #FFF;
+    }
+
+    #list-solutions-main-menu ul,
+    #list-products-main-menu ul {
+        background-color: #F1F1F1;
+    }
+
+    #list-products-et-solutions li a,
+    #list-solutions-main-menu li a,
+    #list-products-main-menu li a,
+    #list-services-main-menu li a {
+        font-size: 14px;
+    }
+
+    /* First level */
+    #list-products-et-solutions .menu-icon,
+    #list-services-main-menu .menu-icon {
+        display: inline-block;
+        width: 30px;
+        position: absolute;
+    }
+
+    #list-products-et-solutions .menu-icon svg {
+        margin: 8px 26px;
+        width: 100%;
+    }
+
+    #list-services-main-menu .menu-icon svg {
+        padding-top: 7px;
+        margin: 8px 26px;
+        width: 100%;
+    }
+
+    #list-products-et-solutions .menu-icon svg *,
+    #list-products-et-solutions .menu-icon:after,
+    #list-services-main-menu .menu-icon svg *,
+    #list-services-main-menu .menu-icon:after {
+        fill: #fff;
+        color: #fff;
+    }
+
+    #list-products-et-solutions li.selected-item-container .menu-icon svg,
+    #list-products-et-solutions li.selected-item-container .menu-icon svg *,
+    #list-products-et-solutions li.selected-item-container .menu-icon:after,
+    #list-services-main-menu li.selected-item-container .menu-icon svg,
+    #list-services-main-menu li.selected-item-container .menu-icon svg *,
+    #list-services-main-menu li.selected-item-container .menu-icon:after {
+        fill: #2379bd;
+        color: #2379bd;
+    }
+
+    #list-products-et-solutions .menu-icon.empty,
+    #list-services-main-menu .menu-icon.empty {
+        margin-top: 5px;
+    }
+
+    #list-products-et-solutions .menu-icon.empty:after,
+    #list-services-main-menu .menu-icon.empty:after {
+        content: "\e018";
+        font-family: "Glyphicons Halflings";
+        font-size: 25px;
+    }
+
+    #list-products-et-solutions .dropdown-submenu li.active,
+    #list-solutions-main-menu .dropdown-submenu li.active,
+    #list-products-main-menu .dropdown-submenu li.active,
+    #list-services-main-menu .dropdown-submenu li.active {
+        padding-bottom: 5px;
+    }
+
+    #list-products-et-solutions .caret,
+    #list-solutions-main-menu .caret,
+    #list-products-main-menu .caret,
+    #list-services-main-menu .caret {
+        display: none;
+    }
+
+    #list-products-et-solutions>li,
+    #list-services-main-menu>li {
+        border-bottom-color: #868d97;
+    }
+
+    #list-solutions-main-menu>li,
+    #list-products-main-menu>li {
+        position: relative;
+        float: left;
+        margin-left: 25px;
+        margin-right: 35px;
+        min-width: 200px;
+    }
+
+    #list-products-main-menu>li {
+        min-width: 197px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    #list-solutions-main-menu>li {
+        min-width: 240px;
+    }
+
+    #list-solutions-main-menu>li#cloud-management {
+        top: -8px;
+        left: 600px;
+        z-index: 5000;
+    }
+
+    #list-solutions-main-menu>li#cloud-management.spanish {
+        top: 160px;
+        left: -13px;
+    }
+
+    #list-products-et-solutions>li>a,
+    #list-services-main-menu>li>a {
+        background-color: #747b87;
+        color: #fff;
+        line-height: 1.4;
+        padding: 20px 15px 19px 80px;
+    }
+
+    #list-solutions-main-menu>li>a,
+    #list-products-main-menu>li>a {
+        background-color: #f1f1f1 !important;
+        font-weight: 700;
+        line-height: 1.4;
+        padding: 10px 15px 9px 0;
+
+    }
+
+    #list-solutions-main-menu>li>a {
+        margin-left: -5px;
+    }
+
+    /* Second level - General Settings  */
+
+    #products-et-solutions .dropdown-submenu,
+    #services-main-menu .dropdown-submenu {
+        padding: 20px 0px;
+        margin-top: 0;
+        border-top: none;
+    }
+
+    #products-et-solutions .dropdown-submenu .close-item,
+    #solutions-main-menu .dropdown-submenu .close-item,
+    #products-main-menu .dropdown-submenu .close-item,
+    #services-main-menu .dropdown-submenu .close-item {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        cursor: pointer;
+        text-align: right;
+    }
+
+    #products-et-solutions .dropdown-submenu li,
+    #solutions-main-menu .dropdown-submenu li,
+    #products-main-menu .dropdown-submenu li,
+    #services-main-menu .dropdown-submenu li {
+        border-bottom: none;
+        color: #888;
+    }
+
+    #products-et-solutions .dropdown-submenu a,
+    #solutions-main-menu .dropdown-submenu a,
+    #products-main-menu .dropdown-submenu a,
+    #services-main-menu .dropdown-submenu a {
+        border-bottom: solid 4px transparent;
+    }
+
+    #products-et-solutions .dropdown-submenu li .item-description,
+    #services-main-menu .dropdown-submenu li .item-description {
+        display: block;
+        font-size: 14px;
+    }
+
+    #solutions-main-menu .dropdown-submenu li .item-description,
+    #products-main-menu .dropdown-submenu li .item-description {
+        display: none;
+    }
+
+    .i18n-en #products-et-solutions .dropdown-submenu li.last .item-description,
+    .i18n-es #products-et-solutions .dropdown-submenu li.last .item-description,
+    .i18n-en #solutions-main-menu .dropdown-submenu li.last .item-description,
+    .i18n-es #solutions-main-menu .dropdown-submenu li.last .item-description,
+    .i18n-en #products-main-menu .dropdown-submenu li.last .item-description,
+    .i18n-es #products-main-menu .dropdown-submenu li.last .item-description,
+    .i18n-en #services-main-menu .dropdown-submenu li.last .item-description,
+    .i18n-es #services-main-menu .dropdown-submenu li.last .item-description {
+        display: none;
+    }
+
+
+    #products-et-solutions .dropdown-level-3 li:hover>a,
+    #solutions-main-menu .dropdown-level-3 li:hover>a,
+    #products-main-menu .dropdown-level-3 li:hover>a,
+    #services-main-menu .dropdown-level-3 li:hover>a {
+        text-decoration: underline;
+    }
+
+    .i18n-en #products-et-solutions .dropdown-submenu li.last,
+    .i18n-es #products-et-solutions .dropdown-submenu li.last,
+    .i18n-en #services-main-menu .dropdown-submenu li.last,
+    .i18n-es #services-main-menu .dropdown-submenu li.last {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+    }
+
+    /* Second level - Items  */
+    #list-products-et-solutions .dropdown-submenu li.section-title,
+    #list-products-et-solutions .dropdown-submenu li.section-title a,
+    #list-solutions-main-menu .dropdown-submenu li.section-title,
+    #list-solutions-main-menu .dropdown-submenu li.section-title a,
+    #list-products-main-menu.dropdown-menu li.section-title,
+    #list-products-main-menu.dropdown-menu li.section-title a,
+    #list-services-main-menu .dropdown-submenu li.section-title,
+    #list-services-main-menu .dropdown-submenu li.section-title a {
+        font-size: 16px;
+        color: #888;
+        padding: 0 0 0 15px;
+        margin: 0;
+        text-decoration: none;
+    }
+
+
+    #list-products-main-menu.dropdown-menu li.section-title,
+    #list-products-main-menu.dropdown-menu li.section-title a {
+        padding: 0 0 0 10px;
+    }
+
+    #list-products-et-solutions .dropdown-submenu li.section-title a,
+    #list-solutions-main-menu .dropdown-submenu li.section-title a,
+    #list-products-main-menu.dropdown-menu li.section-title a,
+    #list-services-main-menu .dropdown-submenu li.section-title a {
+        line-height: 2.2;
+        font-weight: 400 !important;
+    }
+
+    #list-products-et-solutions .dropdown-submenu li.section-title:hover,
+    #list-products-et-solutions .dropdown-submenu li.section-title:hover a,
+    #list-services-main-menu .dropdown-submenu li.section-title:hover,
+    #list-services-main-menu .dropdown-submenu li.section-title:hover a {
+        background-color: #FFF;
+    }
+
+    #list-solutions-main-menu .dropdown-submenu li.section-title:hover,
+    #list-solutions-main-menu .dropdown-submenu li.section-title:hover a,
+    #list-products-main-menu.dropdown-menu li.section-title:hover,
+    #list-products-main-menu.dropdown-menu li.section-title:hover a {
+        background-color: #F1F1F1;
+    }
+
+    #products-et-solutions .dropdown-level-2,
+    #solutions-main-menu .dropdown-level-2,
+    #products-main-menu .dropdown-level-2,
+    #services-main-menu .dropdown-level-2 {
+        border-left: none;
+    }
+
+    #products-et-solutions .dropdown-level-2,
+    #products-et-solutions .dropdown-level-3,
+    #products-main-menu .dropdown-level-2,
+    #products-main-menu .dropdown-level-3,
+    #services-main-menu .dropdown-level-2,
+    #services-main-menu .dropdown-level-3 {
+        padding-bottom: 80px;
+    }
+
+    #solutions-main-menu .dropdown-level-2,
+    #products-main-menu .dropdown-level-2 {
+        opacity: 1 !important;
+        display: block !important;
+    }
+
+    #products-et-solutions .dropdown-level-2>li,
+    #services-main-menu .dropdown-level-2>li {
+        position: relative;
+    }
+
+    #products-et-solutions .dropdown-level-2>li>.link-container>a,
+    #services-main-menu .dropdown-level-2>li>.link-container>a {
+        color: #2379bd;
+        line-height: 1;
+        display: block;
+        position: relative;
+    }
+
+    #solutions-main-menu .dropdown-level-2>li>.link-container>a,
+    #products-main-menu .dropdown-level-2>li>.link-container>a {
+        color: #2f353e;
+        display: block;
+        position: relative;
+        min-width: 230px;
+    }
+
+    #solutions-main-menu .dropdown-level-2>li>.link-container>a {
+        line-height: .8;
+    }
+
+    #products-main-menu .dropdown-level-2>li>.link-container>a {
+        line-height: .6;
+    }
+
+    #solutions-main-menu.spanish .dropdown-level-2>li>.link-container>a {
+        line-height: 1.1 !important
+    }
+
+    #solutions-main-menu .dropdown-level-2>li.last>.link-container>a,
+    #products-main-menu .dropdown-level-2>li.last>.link-container>a {
+        /* color: #2379bd; */
+    }
+
+    /* Arrow for the Solutions */
+    #products-et-solutions .dropdown-level-2>li.expanded>.link-container>a:after,
+    #solutions-main-menu .dropdown-level-2>li.expanded>.link-container>a:after,
+    #products-main-menu .dropdown-level-2>li.expanded>.link-container>a:after,
+    #services-main-menu .dropdown-level-2>li.expanded>.link-container>a:after {
+        font-size: 14px;
+        content: "\e258";
+        font-family: 'Glyphicons Halflings';
+        float: right;
+        margin-top: .1em;
+    }
+
+    /* Disables the arrow in certain list items */
+    .i18n-en #list-products-et-solutions .dropdown-level-2 li.section-title a:after,
+    .i18n-en #list-products-et-solutions .dropdown-level-2 li.last a:after,
+    .i18n-es #list-products-et-solutions .dropdown-level-2 li.section-title a:after,
+    .i18n-es #list-products-et-solutions .dropdown-level-2 li.last a:after,
+    .i18n-en #list-solutions-main-menu .dropdown-level-2 li.section-title a:after,
+    .i18n-en #list-solutions-main-menu .dropdown-level-2 li.last a:after,
+    .i18n-es #list-solutions-main-menu .dropdown-level-2 li.section-title a:after,
+    .i18n-es #list-solutions-main-menu .dropdown-level-2 li.last a:after,
+    .i18n-en #list-products-main-menu .dropdown-level-2 li.section-title a:after,
+    .i18n-en #list-products-main-menu .dropdown-level-2 li.last a:after,
+    .i18n-es #list-products-main-menu .dropdown-level-2 li.section-title a:after,
+    .i18n-es #list-products-main-menu .dropdown-level-2 li.last a:after,
+    .i18n-en #list-services-main-menu .dropdown-level-2 li.section-title a:after,
+    .i18n-en #list-services-main-menu .dropdown-level-2 li.last a:after,
+    .i18n-es #list-services-main-menu .dropdown-level-2 li.section-title a:after,
+    .i18n-es #list-services-main-menu .dropdown-level-2 li.last a:after,
+    #other-product-lines .carat {
+        display: none !important;
+    }
+
+    #products-et-solutions .dropdown-level-2>li .item-description,
+    #solutions-main-menu .dropdown-level-2>li .item-description,
+    #products-main-menu .dropdown-level-2>li .item-description,
+    #services-main-menu .dropdown-level-2>li .item-description {
+        margin-top: 0;
+    }
+
+    #products-et-solutions .dropdown-level-2>li>.link-container,
+    #services-main-menu .dropdown-level-2>li>.link-container {
+        min-width: 250px;
+        margin-left: 20px;
+        margin-right: 10px;
+        display: block;
+        padding: 12px 10px;
+        -webkit-transition: all ease-out .2s;
+        transition: all ease-out .2s;
+    }
+
+    #solutions-main-menu .dropdown-level-2>li>.link-container,
+    #products-main-menu .dropdown-level-2>li>.link-container {
+        margin-left: 10px;
+        margin-right: 20px;
+        display: block;
+        padding: 6px 10px;
+        -webkit-transition: all ease-out .2s;
+        transition: all ease-out .2s;
+    }
+
+    .i18n-en #products-et-solutions .dropdown-level-2>li.last>.link-container>a,
+    .i18n-es #products-et-solutions .dropdown-level-2>li.last>.link-container>a,
+    .i18n-en #services-main-menu .dropdown-level-2>li.last>.link-container>a,
+    .i18n-es #services-main-menu .dropdown-level-2>li.last>.link-container>a {
+        color: #FFF;
+        background-color: #237cc3;
+        border-radius: 6px;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 24px;
+        font-size: 16px;
+        text-indent: 0;
+        display: block;
+        padding: 5px;
+    }
+
+    .i18n-en #solutions-main-menu .dropdown-level-2>li.last>.link-container>a,
+    .i18n-es #solutions-main-menu .dropdown-level-2>li.last>.link-container>a,
+    .i18n-en #products-main-menu .dropdown-level-2>li.last>.link-container>a,
+    .i18n-es #products-main-menu .dropdown-level-2>li.last>.link-container>a {
+        /* color: #237cc3; */
+    }
+
+    .i18n-en #products-et-solutions .dropdown-level-2>li.last>a:hover,
+    .i18n-en #products-et-solutions .dropdown-level-2>li.last:hover>.link-container>a,
+    .i18n-es #products-et-solutions .dropdown-level-2>li.last>a:hover,
+    .i18n-es #products-et-solutions .dropdown-level-2>li.last:hover>.link-container>a,
+    .i18n-en #services-main-menu .dropdown-level-2>li.last>a:hover,
+    .i18n-en #services-main-menu .dropdown-level-2>li.last:hover>.link-container>a,
+    .i18n-es #services-main-menu .dropdown-level-2>li.last>a:hover,
+    .i18n-es #services-main-menu .dropdown-level-2>li.last:hover>.link-container>a {
+        background-color: #23527c;
+        text-decoration: none;
+    }
+
+    #products-et-solutions .dropdown-level-2>li>.link-container>a:hover,
+    #solutions-main-menu .dropdown-level-2>li>.link-container>a:hover,
+    #products-main-menu .dropdown-level-2>li>.link-container>a:hover,
+    #services-main-menu .dropdown-level-2>li>.link-container>a:hover {
+        text-decoration: none;
+    }
+
+    #products-et-solutions .dropdown-level-2>li>.link-container>.item-description,
+    #solutions-main-menu .dropdown-level-2>li>.link-container>.item-description,
+    #products-main-menu .dropdown-level-2>li>.link-container>.item-description,
+    #services-main-menu .dropdown-level-2>li>.link-container>.item-description {
+        margin-top: 0;
+        padding: 0;
+        line-height: 1.25em;
+    }
+
+    #products-et-solutions .dropdown-level-2>li:hover>.link-container,
+    #solutions-main-menu .dropdown-level-2>li:hover>.link-container,
+    #products-main-menu .dropdown-level-2>li:hover>.link-container,
+    #services-main-menu .dropdown-level-2>li:hover>.link-container {
+        min-width: 260px;
+        background-color: #deebf4;
+    }
+
+    .i18n-en #products-et-solutions .dropdown-level-2>li.last:hover>.link-container,
+    .i18n-es #products-et-solutions .dropdown-level-2>li.last:hover>.link-container,
+    .i18n-en #services-main-menu .dropdown-level-2>li.last:hover>.link-container,
+    .i18n-es #services-main-menu .dropdown-level-2>li.last:hover>.link-container {
+        background-color: #FFF;
+    }
+
+    /* Third level - Items  */
+    #products-et-solutions .dropdown-level-3>li,
+    #solutions-main-menu .dropdown-level-3>li,
+    #services-main-menu .dropdown-level-3>li {
+        margin-bottom: 20px;
+        margin-left: 10px;
+    }
+
+    #products-et-solutions .dropdown-level-3>li>a,
+    #solutions-main-menu .dropdown-level-3>li>a,
+    #services-main-menu .dropdown-level-3>li>a {
+        color: #777;
+        line-height: 1.2;
+        padding-bottom: 0px;
+        font-size: 16px;
+    }
+
+    #products-et-solutions .dropdown-level-3>li>.item-description,
+    #solutions-main-menu .dropdown-level-3>li>.item-description,
+    #services-main-menu .dropdown-level-3>li>.item-description {
+        color: #999;
+        font-size: 14px;
+        margin-left: 20px;
+    }
+
+    .i18n-en #products-et-solutions .dropdown-level-3>li.last>a,
+    .i18n-es #products-et-solutions .dropdown-level-3>li.last>a,
+    .i18n-en #solutions-main-menu .dropdown-level-3>li.last>a,
+    .i18n-es #solutions-main-menu .dropdown-level-3>li.last>a,
+    .i18n-en #services-main-menu .dropdown-level-3>li.last>a,
+    .i18n-es #services-main-menu .dropdown-level-3>li.last>a {
+        border-top: solid 1px #ddd;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    .i18n-en #products-et-solutions .dropdown-level-3>li.last>a:after,
+    .i18n-es #products-et-solutions .dropdown-level-3>li.last>a:after,
+    .i18n-en #solutions-main-menu .dropdown-level-3>li.last>a:after,
+    .i18n-es #solutions-main-menu .dropdown-level-3>li.last>a:after,
+    .i18n-en #services-main-menu .dropdown-level-3>li.last>a:after,
+    .i18n-es #services-main-menu .dropdown-level-3>li.last>a:after {
+        font-size: 14px;
+        content: "\e258";
+        font-family: 'Glyphicons Halflings';
+        display: inline-block;
+        white-space: nowrap;
+        -ms-transform: translate(10px, 2px);
+        -webkit-transform: translate(10px, 2px);
+        -moz-transform: translate(10px, 2px);
+        transform: translate(10px, 2px);
+    }
+
+    /* Split product lines list in two columns */
+    #list-products-et-solutions li#product-lines>ul>li,
+    #list-solutions-main-menu li#product-lines>ul>li {
+        display: inline-block;
+        vertical-align: middle;
+        width: 48%;
+    }
+
+    #list-products-et-solutions li#product-lines>ul>li a:after,
+    #list-solutions-main-menu li#product-lines>ul>li a:after,
+    #list-products-main-menu li#product-lines>ul>li a:after {
+        display: none;
+    }
+
+    #list-products-et-solutions li#product-lines>ul>li.section-title,
+    .i18n-en #list-products-et-solutions li#product-lines>ul>li.last,
+    .i18n-es #list-products-et-solutions li#product-lines>ul>li.last,
+    #list-solutions-main-menu li#product-lines>ul>li.section-title,
+    .i18n-en #list-solutions-main-menu li#product-lines>ul>li.last,
+    .i18n-es #list-solutions-main-menu li#product-lines>ul>li.last,
+    #list-products-main-menu li#product-lines>ul>li.section-title,
+    .i18n-en #list-products-main-menu li#product-lines>ul>li.last,
+    .i18n-es #list-products-main-menu li#product-lines>ul>li.last {
+        width: 100%;
+        display: block;
+    }
+
+    #solutions-main-menu .dropdown-level-2 {
+        width: 180px;
+        box-shadow: none !important;
+        max-height: 200px !important;
+        border: none !important;
+        position: absolute;
+        left: -25px;
+        top: 45px !important;
+    }
+
+    #products-main-menu .dropdown-level-2 {
+        width: 180px;
+        box-shadow: none !important;
+        max-height: 100px !important;
+        border: none !important;
+        position: absolute;
+        left: -20px;
+        top: 45px !important;
+    }
+
+    #list-solutions-main-menu li#optimization {
+        margin-top: 110px;
+    }
+
+    #list-solutions-main-menu li#document-et-forms-management {
+        margin-top: 140px;
+    }
+
+    #list-solutions-main-menu li#business-intelligence-et-dev-tools.spanish {
+        margin-top: 200px;
+    }
+
+    #list-solutions-main-menu li#document-et-forms-management.spanish {
+        position: relative;
+        margin-top: 170px;
+    }
+
+    #list-products-main-menu li#powertech-for-ibm-i,
+    #list-products-main-menu li#intermapper.expanded.dropdown,
+    #list-products-main-menu li#insite,
+    #list-products-main-menu li#jams,
+    #list-products-main-menu li#core-security,
+    #list-products-main-menu li#other-product-lines,
+    #list-products-main-menu li#product-spacer,
+    #list-solutions-main-menu li#product-spacer,
+    #list-products-main-menu li#robot,
+    #list-products-main-menu li#document-management,
+    #list-products-main-menu li#vityl,
+    #list-products-main-menu li#ver-todos-los-productos,
+    #list-products-main-menu li#banner-ad-hs {
+        margin-top: 120px;
+    }
+
+    #list-products-main-menu li#product-spacer,
+    #list-solutions-main-menu li#product-spacer {
+        visibility: hidden;
+    }
+
+    #list-products-main-menu li#ver-todos-los-productos a:after {
+        content: ' \000BB';
+    }
+
+    #list-solutions-main-menu li#banner-ad-hs,
+    #list-products-main-menu li#banner-ad-hs {
+        width: 280px !important;
+        height: 550px !important;
+        position: absolute !important;
+        top: -120px;
+        left: 959px;
+        background-color: #f1f1f1;
+        box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.175);
+        -webkit-box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.175);
+        -moz-box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.175);
+    }
+
+    #list-solutions-main-menu li#banner-ad-hs a {
+        color: transparent;
+        text-shadow: none;
+        padding-left: 30px !important;
+        background-color: #f1f1f1;
+        background-image: url(http://cdn.helpsystems.com/solutions_menu_hs-suppport-mega-menu-solution-banner.png);
+        background-size: 280px 549px;
+    }
+
+    #solutions-main-menu.spanish #list-solutions-main-menu li#banner-ad-hs a {
+        background-image: url(https://hs-filesystem-dev.s3.amazonaws.com/media/security-scan-solutions-menu-f-spanish.png);
+    }
+
+    #list-products-main-menu li#banner-ad-hs a {
+        color: transparent;
+        text-shadow: none;
+        padding-left: 30px !important;
+        background-color: #f1f1f1;
+        background-image: url(http://cdn.helpsystems.com/hs-tech-update-tom-huntington-mega-menu-banner.png);
+        background-size: 280px 549px;
+    }
+
+    #list-products-main-menu li#banner-ad-hs a.products-menu-banner-ad-spanish {
+        background-image: url(https://cdn.helpsystems.com/media/which-product-is-right-for-my-business-product-menu-spanish.png);
+    }
+
+    #list-solutions-main-menu li#banner-ad-hs {
+        top: 0 !important;
+    }
+
+    #list-solutions-main-menu li#banner-ad-hs a,
+    #list-products-main-menu li#banner-ad-hs a {
+        display: inline-block;
+        width: 280px;
+        height: 550px;
+    }
+
+    #list-solutions-main-menu>li>a.products-menu-banner-ad,
+    #list-products-main-menu>li>a.products-menu-banner-ad {
+        background-color: #93c9ed !important;
+        padding-top: 100px;
+        padding-left: 50px;
+    }
+
+}
+
+
+/***************
+ * Desktop adjustments
+ ****************/
+@media (min-width: 1360px) {
+    #list-solutions-main-menu {
+        left: -610px;
+    }
+
+    #list-products-main-menu {
+        left: -740px;
+    }
+
+    #list-solutions-main-menu>li {
+        min-width: 268px;
+    }
+
+    #list-solutions-main-menu>li#cloud-management {
+        left: 680px;
+    }
+
+    #list-products-main-menu.dropdown-menu li.section-title,
+    #list-products-main-menu.dropdown-menu li.section-title a {
+        padding: 0 0 0 15px;
+    }
+
+    #list-solutions-main-menu>li>a {
+        margin-left: 0;
+    }
+
+    #list-products-et-solutions li a,
+    #list-solutions-main-menu li a,
+    #list-products-main-menu li a,
+    #list-services-main-menu li a {
+        font-size: 16px;
+    }
+
+    #list-products-main-menu {
+        width: 1100px;
+    }
+
+    #list-solutions-main-menu {
+        width: 1380px;
+    }
+
+    #list-solutions-main-menu li#banner-ad-hs,
+    #list-products-main-menu li#banner-ad-hs {
+        left: 1068px;
+    }
+
+    #solutions-main-menu .dropdown-level-2>li>.link-container>a,
+    #products-main-menu .dropdown-level-2>li>.link-container>a {
+        min-width: 250px;
+    }
+
+    #list-solutions-main-menu>li,
+    #list-products-main-menu>li {
+        margin-left: 30px;
+        margin-right: 40px;
+    }
+
+    #solutions-main-menu .dropdown-level-2>li>.link-container,
+    #products-main-menu .dropdown-level-2>li>.link-container {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    #solutions-main-menu .dropdown-level-2 {
+        left: -30px;
+    }
+
+    #products-main-menu .dropdown-level-2 {
+        left: -30px;
+    }
+}
+
+/*******
+ ** Search adjustments
+ ********/
+
+@media (min-width: 992px) and (max-width: 1100px) {
+    .nav-search {
+        margin: 6px 3px 0;
+    }
+
+    nav.navigation .primary>li>a {
+        padding: 10px 9px;
+        font-size: 12px;
+    }
+}
+
+/**********
+ ** Bigger screens
+ **********/
+
+@media (min-width: 1280px) {
+    .nav.nav-pills.primary {
+        position: relative;
+        left: 22px;
+    }
+
+    #list-products-et-solutions,
+    #list-services-main-menu {
+        left: -380px;
+        /*265*/
+        width: 380px;
+    }
+
+    #products-et-solutions .dropdown-level-2,
+    #services-main-menu .dropdown-level-2 {
+        min-height: 0;
+        width: 450px;
+    }
+
+    #products-et-solutions .dropdown-level-3,
+    #solutions-main-menu .dropdown-level-3,
+    #products-main-menu .dropdown-level-3,
+    #services-main-menu .dropdown-level-3 {
+        min-height: 0;
+        width: 400px;
+    }
+
+    nav.navigation .primary #list-soporte,
+    nav.navigation .primary #list-support {
+        left: -187px;
+    }
+
+    nav.navigation #about .dropdown-menu {
+        left: -202px;
+    }
+
+    .i18n-es nav.navigation #about .dropdown-menu {
+        left: -195px;
+    }
+
+    #list-products-et-solutions li#product-lines>ul>li:nth-child(even) .dropdown-level-3,
+    #list-solutions-main-menu li#product-lines>ul>li:nth-child(even) .dropdown-level-3 {
+        margin-left: 232px;
+    }
+}
+
+/**********
+ ** Really big screens/ monitors
+ **********/
+
+@media (min-width: 1500px) {
+
+    #list-products-et-solutions,
+    #list-services-main-menu {
+        left: -380px;
+    }
+
+    #list-solutions-main-menu {
+        left: -652px;
+    }
+
+    #solutions-main-menu.spanish #list-solutions-main-menu {
+        left: -846px;
+    }
+
+    #list-products-main-menu {
+        left: -525px;
+    }
+
+    .primary_products_spanish #list-products-main-menu {
+        left: -710px;
+    }
+
+    #products-et-solutions .dropdown-level-2 {
+        width: 500px;
+    }
+
+    #services-main-menu .dropdown-level-2 {
+        width: 405px;
+    }
+
+    #products-et-solutions .dropdown-level-3,
+    #solutions-main-menu .dropdown-level-3,
+    #services-main-menu .dropdown-level-3 {
+        width: 405px;
+    }
+
+    #list-products-et-solutions li#product-lines>ul>li:nth-child(even) .dropdown-level-3,
+    #list-solutions-main-menu li#product-lines>ul>li:nth-child(even) .dropdown-level-3 {
+        margin-left: 258px;
+    }
+}
+
+/* Subsite - Automate */
+.logo-secondary {
+    border-left: 1px solid #fff;
+    margin-top: 35px;
+    padding-left: .5em;
+    text-decoration: none;
+}
+
+.logo-secondary>a,
+.logo-secondary>a:hover,
+.logo-secondary>a:focus {
+    text-decoration: none;
+}
+
+#block-hs-custom-hs-custom-nav-search,
+#block-hs-custom-hs-hubspot-smart-cta {
+    float: right;
+}
+
+.primary-alt .free-trials {
+    display: none;
+}
