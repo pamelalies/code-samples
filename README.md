@@ -1,6 +1,17 @@
 # code-samples
 This repository contains a few examples of my work.
 
+Please start with the 'PamelaLies-DrupalSamples' Word file, as that document has a high-level description of some of the projects we discussed today,
+and will give you a little background on the code samples. I've included a Javascript file, a CSS file, and a couple of D7 modules I've worked on
+recently.
+
+Also, the PDF file you see here with "CCAT" in the filename contains the results of a cognitive assessment I completed recently. Check out
+this link for background information on that test, and why it's important to potential employers:
+https://www.criteriacorp.com/assessments/cognitive-aptitude/criteria-cognitive-aptitude-test-ccat.
+
+Quick description of code sample files:
+--------------------------------------
+
 The gtw_registration.js file contains the bulk of the code for pulling data about currently-scheduled webinars from GoToWebinar on-the-fly,
 filling in the list of available webinars into a HubSpot form, and when the user chooses their webinar(s), the code interfaces with HubSpot
 via their API, which then sends the registration data off to GoToWebinar, and the user then receives their registration confirmation via 
