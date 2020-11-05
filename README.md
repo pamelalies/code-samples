@@ -1,7 +1,7 @@
 # code-samples
 This repository contains a few examples of my work.
 
-Please start with the 'PamelaLies-DrupalSamples' Word file, as that document has a high-level description of some of the projects we discussed today,
+Please start with the 'PamelaLies-DrupalSamples' Word file, as that document has a high-level description of some of the projects we discussed on our call,
 and will give you a little background on the code samples. I've included a Javascript file, a CSS file, and a couple of D7 modules I've worked on
 recently.
 
